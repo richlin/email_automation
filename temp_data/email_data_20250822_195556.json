@@ -1,0 +1,284 @@
+{
+  "export_timestamp": "2025-08-22T19:55:56.227172",
+  "total_messages": 20,
+  "messages": [
+    {
+      "id": "198d327af1a34c35",
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "Security alert",
+      "date": "Fri, 22 Aug 2025 19:00:48 GMT",
+      "labels": [
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "[image: Google]\r\nYou allowed email automation access to some of your Google Account data\r\n\r\n\r\nrichtestgenai@gmail.com\r\n\r\nIf you didn’t allow email automation access to some of your Google Account\r\ndata, someone else may be trying to access your Google Account data.\r\n\r\nTake a moment now to check your account activity and secure your account.\r\nCheck activity\r\n<https://accounts.google.com/AccountChooser?Email=richtestgenai@gmail.com&continue=https://myaccount.google.com/alert/nt/1755889248000?rfn%3D127%26rfnc%3D1%26eid%3D-3139355702330736406%26et%3D0>\r\nTo make changes at any time to the access that email automation has to your\r\ndata, go to your Google Account\r\n<https://accounts.google.com/AccountChooser?Email=richtestgenai@gmail.com&continue=https://myaccount.google.com/connections/overview/AXgE0HOA98TTiQw40TYLLhGcww8040sPCKGDpiZcbFwap5W8RPxz-ZBf3jJnvxLC_1AQCvxrEM7mRwDNlxRPs1uGQRU?utm_source%3Dsec_alert%26utm_medium%3Demail_notification%26force_all%3Dtrue>\r\nYou can also see security activity at\r\nhttps://myaccount.google.com/notifications\r\nYou received this email to let you know about important changes to your\r\nGoogle Account and services.\r\n© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA\r\n",
+      "thread_id": "198d327af1a34c35"
+    },
+    {
+      "id": "198ccee909462940",
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "Security alert",
+      "date": "Thu, 21 Aug 2025 14:00:42 GMT",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "[image: Google]\r\nYou allowed n8n.cloud access to some of your Google Account data\r\n\r\n\r\nrichtestgenai@gmail.com\r\n\r\nIf you didn’t allow n8n.cloud access to some of your Google Account data,\r\nsomeone else may be trying to access your Google Account data.\r\n\r\nTake a moment now to check your account activity and secure your account.\r\nCheck activity\r\n<https://accounts.google.com/AccountChooser?Email=richtestgenai@gmail.com&continue=https://myaccount.google.com/alert/nt/1755784842000?rfn%3D127%26rfnc%3D1%26eid%3D6947573506257594208%26et%3D0>\r\nTo make changes at any time to the access that n8n.cloud has to your data,\r\ngo to your Google Account\r\n<https://accounts.google.com/AccountChooser?Email=richtestgenai@gmail.com&continue=https://myaccount.google.com/connections/overview/AXgE0HMjGRmTDbJmHpkGrMaM7VLzeVHZ_7t_CUJwKYGxOSGqLxxP2J75LJyaDQ3iIRX2l9jFF-6VU46HSDCGSwm5-CU?utm_source%3Dsec_alert%26utm_medium%3Demail_notification%26force_all%3Dtrue>\r\nYou can also see security activity at\r\nhttps://myaccount.google.com/notifications\r\nYou received this email to let you know about important changes to your\r\nGoogle Account and services.\r\n© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA\r\n",
+      "thread_id": "198ccd111c44a348"
+    },
+    {
+      "id": "198ccd11cab474f4",
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "Security alert",
+      "date": "Thu, 21 Aug 2025 13:28:32 GMT",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "[image: Google]\r\nNew sign-in to your account\r\n\r\n\r\nrichtestgenai@gmail.com\r\nWe noticed a new sign-in to your Google Account. If this was you, you don’t\r\nneed to do anything. If not, we’ll help you secure your account.\r\nCheck activity\r\n<https://accounts.google.com/AccountChooser?Email=richtestgenai@gmail.com&continue=https://myaccount.google.com/alert/nt/1755782912000?rfn%3D325%26rfnc%3D1%26eid%3D8585532400052352411%26et%3D0>\r\nYou can also see security activity at\r\nhttps://myaccount.google.com/notifications\r\nYou received this email to let you know about important changes to your\r\nGoogle Account and services.\r\n© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA\r\n",
+      "thread_id": "198ccd111c44a348"
+    },
+    {
+      "id": "198ccd111c44a348",
+      "from": "Google <no-reply@accounts.google.com>",
+      "subject": "Security alert",
+      "date": "Thu, 21 Aug 2025 13:28:28 GMT",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "[image: Google]\r\nNew passkey added to your account\r\n\r\n\r\nrichtestgenai@gmail.com\r\nIf you didn’t add a passkey, someone might be using your account. Check and\r\nsecure your account now.\r\nCheck activity\r\n<https://accounts.google.com/AccountChooser?Email=richtestgenai@gmail.com&continue=https://myaccount.google.com/alert/nt/1755782908777?rfn%3D364%26rfnc%3D1%26eid%3D-7382376931411237448%26et%3D0>\r\nYou can also see security activity at\r\nhttps://myaccount.google.com/notifications\r\nYou received this email to let you know about important changes to your\r\nGoogle Account and services.\r\n© 2025 Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA\r\n",
+      "thread_id": "198ccd111c44a348"
+    },
+    {
+      "id": "198bea1d2d764e68",
+      "from": "Google Maps Platform <google-maps-platform-noreply@google.com>",
+      "subject": "[Advised Action] Migrate to Swift Package Manager for continued access to Google Maps Platform iOS SDKs",
+      "date": "Mon, 18 Aug 2025 12:22:12 -0700",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Hello Google Maps Platform customer,\r\n\r\nTo streamline our development and release processes, and align with the  \r\nevolving iOS ecosystem, we will be phasing out support for CocoaPods as an  \r\ninstallation method for our Google Maps Platform iOS SDKs.\r\n\r\nWhat you need to know\r\n\r\nKey changes:\r\n\r\nWe will stop releasing new versions of the following Google Maps Platform  \r\niOS SDKs through CocoaPods:\r\n\r\n    - Maps SDK for iOS[1]\r\n    - Places SDK for iOS[2]\r\n    - Navigation SDK for iOS[3]\r\n    - Fleet Engine[4]\r\n\r\nCocoaPods is in maintenance mode[5], and Swift Package Manager has become  \r\nthe preferred dependency manager for iOS development. Focusing on Swift  \r\nPackage Manager will allow us to dedicate more resources to improving the  \r\nSDKs.\r\n\r\nWe will support releasing new Google Maps Platform iOS SDKs versions (for  \r\nexample: version 10.x.x) through CocoaPods until Q2 2026. Starting with  \r\nversion 11.0 of all Google Maps Platform iOS SDKs, new versions will not be  \r\nreleased on CocoaPods.\r\n\r\nPotential impact:\r\n\r\nIf you continue to use CocoaPods after Q2 2026, you will not be able to  \r\naccess the latest Google Maps Platform iOS SDKs versions, including new  \r\nfeatures, performance improvements, and critical bug fixes.\r\n\r\nWhat you need to do\r\n\r\nAdvised actions:\r\n\r\nWe encourage all developers currently using CocoaPods for Google Maps  \r\nPlatform iOS SDKs to begin planning their migration to Swift Package  \r\nManager or manual installation to ensure continued access to the latest  \r\nupdates. Learn more about the Swift Package Manager installation  \r\ninstructions in the SDK documentation links above.\r\n\r\nImpacted customers/accounts:\r\n\r\nYou are using the affected SDKs on the following projects, format  \r\nproject_id (project_number):\r\n\r\n    - avid-truth-434123-e0 (167887354208)\r\n\r\nYou may or may not be using CocoaPods in applications linked to those  \r\nprojects - only applications using CocoaPods are affected.\r\n\r\nWe’re here to help\r\n\r\nWe understand these changes may take some planning. If you have any  \r\nquestions or require assistance, please feel free to contact our support  \r\nteam at Google Maps Platform Support[6].\r\n\r\nThanks for choosing Google Maps Platform.\r\n\r\n—The Google Maps Platform Team\r\n\r\n[1] https://developers.google.com/maps/documentation/ios-sdk/config\r\n[2] https://developers.google.com/maps/documentation/places/ios-sdk/config\r\n[3]  \r\nhttps://developers.google.com/maps/documentation/navigation/ios-sdk/xcode-setup\r\n[4] https://developers.google.com/maps/documentation/mobility/fleet-engine\r\n[5] https://blog.cocoapods.org/CocoaPods-Support-Plans/\r\n[6]  \r\nhttps://developers.google.com/maps/support/?utm_source=em-anncmt&utm_medium=em\r\n\r\n© 2025 Google LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043\r\n\r\nYou have received this mandatory service announcement to update you about  \r\nimportant changes to Google Maps Platform or your account.\r\n",
+      "thread_id": "198bea1d2d764e68"
+    },
+    {
+      "id": "198a39809858310f",
+      "from": "Make <info@make.com>",
+      "subject": "Important update: Introducing Credits as our new billing unit",
+      "date": "Wed, 13 Aug 2025 13:18:26 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "( https://www.make.com/en?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )\r\nHey Rich,\r\n\r\n \r\n\r\nWe’re writing to let you know about an important billing update.\r\n\r\n \r\n\r\nStarting August 27, 2025, operations will be replaced by credits as the new billing unit. Most actions will consume 1 credit per action, advanced features (especially AI) consume more, either with a fixed cost or based on usage, providing a pricing model that better reflects your specific usage.\r\n\r\nHere's what you need to know\r\n\r\nAutomatic conversion: No action is required from you. On August 27, your existing operations balance will be automatically converted to credits at a 1:1 rate: 1 Operation = 1 Credit.\r\n\r\nPlan and price: Your current plan and price stay exactly the same. Both manual and automatic purchases of extra credits will work the same way as before.\r\n\r\nCredit consumption: Most actions will consume 1 credit per action, advanced features (especially AI) consume more, either with a fixed cost or based on usage.\r\n\r\nWhile operations will no longer be a billing unit, they will still be visible within your scenario execution, now representing your data unit processed. \r\n\r\n \r\n\r\nFor more information about this change and how credits work, please visit our help documentation ( https://help.make.com/credits?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io ). If you have any questions, don't hesitate to reach\r\nout.\r\n\r\nThank you for being a valued customer.\r\n\r\nThe Make Team\r\n\r\nWeb Site ( https://www.make.com/en?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )Facebook ( https://www.facebook.com/itsMakeHQ/?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )LinkedIn ( https://www.linkedin.com/company/itsmakehq?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )\r\nTwitter ( https://twitter.com/make_hq?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )Instagram ( https://instagram.com/itsmakehq/?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )YouTube ( https://www.youtube.com/channel/UC8KWRrf8wqyowmWhXJ9DRjQ?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )\r\nNeed assistance? Our care team ( https://www.make.com/en/ticket?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io ) is here to help.\r\n\r\nCelonis s.r.o., Menclova 2538/2, 180 00 Prague, Czechia \r\n\r\nPrivacy Policy ( https://www.make.com/en/privacy-notice?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io ) | Terms & Conditions ( https://www.make.com/en/terms-and-conditions?utm_campaign=credits-launch-1308&utm_medium=email&utm_source=customer.io )",
+      "thread_id": "198a39809858310f"
+    },
+    {
+      "id": "1985d34fb0722f70",
+      "from": "Exa Product Updates <updates@product.exa.ai>",
+      "subject": "Fastest search API in the world",
+      "date": "Wed, 30 Jul 2025 21:20:09 +0000",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Hi there!\r\n\r\nToday we released Exa Fast -  the fastest web search API in the world, with average latency <425ms. This is 30% faster than anyone else.\r\n\r\nWhen is this the most useful?* Agentic workflows: AI agents run dozens of search calls, making every millisecond add up.\r\n* Low-latency AI products: Voice companions and other apps where users expect instant results.\r\nWe built this by creating a streamlined version of our neural and keyword search. Read more about it on our blog ( https://exa.ai/blog/fastest-search-api ).\r\n\r\nTo try it, head to the dashboard ( https://dashboard.exa.ai/playground/search?q=cool%20blog%20post%20about%20fast%20tech&filters=%7B%22text%22%3A%22true%22%2C%22type%22%3A%22fast%22%2C%22livecrawl%22%3A%22never%22%7D ) and select search type fast. Let us know if you have any questions!\r\n\r\nCheers,\r\nExa Team",
+      "thread_id": "1985d34fb0722f70"
+    },
+    {
+      "id": "198553becb992cd1",
+      "from": "Mariam from Softr <mariam@softr.io>",
+      "subject": "Meet Ask AI, the built-in teammate for your apps 💬",
+      "date": "Tue, 29 Jul 2025 08:09:09 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "( https://studio.softr.io/dashboard )\r\nIntroducing Ask AI: the built-in teammate for your Softr apps\r\n\r\nHi Rich,\r\n\r\nAsk AI is the built-in teammate that reads live data and answers your end users' questions—right inside your app.\r\n\r\n✅ Get instant answers: Your users can ask questions like “What’s overdue?” or “How many items are left in stock?” and get answers instantly, based on your app’s real-time data.\r\n✅ No setup needed: Just toggle it on. No need to connect APIs or manage complicated settings.\r\n✅ Customize it: Add instructions, set the tone, and guide the kinds of questions users can ask.\r\n\r\n✅ Secure by default: Ask AI respects your visibility and permission rules (only has access to the data that each user can see).\r\n\r\nHow do I set it up? \r\nJust head to any dynamic block, click Actions, and add Ask AI as a topbar button. You can pick an icon, write custom instructions, and tailor the experience to match your app and users.\r\n\r\nIs it available on the free plan? \r\nYes! For now, Ask AI is available with unlimited usage on all plans, including Free. Soon, each plan will include a set number of monthly AI credits, and Ask AI will count toward those.\r\n\r\nNote: Ask AI works with Softr Databases, Google Sheets, Notion, monday.com, ClickUp, Coda and more. Airtable, HubSpot, and SQL support coming soon.\r\n\r\nExplore Ask AI ( https://www.softr.io/ask-ai )Want to see Ask AI in action? Check out the launch video ( https://www.youtube.com/watch?v=tcsnnZHBFV8 ). \r\n\r\nThanks for building with us!\r\n\r\n- Mariam, CEO, Softr \r\n\r\n Build software without devs. Blazingly fast.\r\n\r\nSoftr Twitter ( https://twitter.com/softr_io )\r\nSoftr LinkedIn ( https://www.linkedin.com/company/softr/posts/?feedView=all )Softr YouTube ( https://www.youtube.com/c/Softr )\r\nCopyright © 2025 Softr, All rights reserved.\r\n\r\nSoftr Platforms GmbH, Rosenthaler Straße 13, 10119 Berlin, Germany\r\n\r\nYou received this email because you're subscribed to softr.io ( https://www.softr.io/ ).\r\nYou can unsubscribe ( http://track.customer.io/unsubscribe/dgS3yAYDALXMJrTMJgGYVTO0uwrv4sHf8mVyBNw= ) at anytime.\r\n",
+      "thread_id": "198553becb992cd1"
+    },
+    {
+      "id": "1981e258220e85b2",
+      "from": "Make <noreply@us2.make.com>",
+      "subject": "🛑 Encountered error in Flavor Finds - user input scenario",
+      "date": "Fri, 18 Jul 2025 15:27:10 +0000",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Make [https://cdn.make.com/img/make/make-logo-150x48@2x.png]\r\nMake [https://cdn.make.com/img/make/make-logo-dark-150x48@2x.png]\r\n\r\n\r\nENCOUNTERED ERROR IN FLAVOR FINDS - USER INPUT SCENARIO\r\n\r\nYour scenario Flavor Finds - user input has encountered an error.\r\n\r\nThe scenario has not been paused and continues to run according to your\r\nsettings. Nevertheless, you should pay attention to the issue.\r\n\r\n * Scenario: Flavor Finds - user input\r\n   [https://us2.make.com/52405/scenarios/63866/logs]\r\n * Organization: My Organization [https://us2.make.com/organization/1946475]\r\n * Team: My Team [https://us2.make.com/52405/team]\r\n * Execution: 90685e22563b43cd8ccf0755b9708005\r\n   [https://us2.make.com/52405/scenarios/63866/logs/90685e22563b43cd8ccf0755b9708005]\r\n\r\nDetails:\r\n\r\n * Failed to verify connection 'My Google connection'. Unexpected error:\r\n   internal_failure\r\n * Failed to verify connection 'My Google connection'. Unexpected error:\r\n   internal_failure\r\n * Cannot initialize the scenario because of the reason 'Failed to verify\r\n   connection 'My Google connection'. Unexpected error: internal_failure'\r\n * Failed to verify connection 'My Google connection'. Unexpected error:\r\n   internal_failure\r\n\r\nNeed any help? Contact us [https://www.make.com/en/ticket]\r\n\r\n[https://cdn.make.com/img/make/ico-twt.png]\r\n[https://cdn.make.com/img/make/ico-twt-light.png]\r\n[https://twitter.com/make_hq]\r\n\r\n[https://cdn.make.com/img/make/ico-fcb.png]\r\n[https://cdn.make.com/img/make/ico-fcb-light.png]\r\n[https://facebook.com/itsMakeHQ]\r\n\r\n[https://cdn.make.com/img/make/ico-lnk.png]\r\n[https://cdn.make.com/img/make/ico-lnk-light.png]\r\n[https://www.linkedin.com/company/itsmakehq]\r\n\r\n[https://cdn.make.com/img/make/ico-ins.png]\r\n[https://cdn.make.com/img/make/ico-ins-light.png]\r\n[https://www.instagram.com/itsmakehq]\r\n\r\n[https://cdn.make.com/img/make/ico-ytb.png]\r\n[https://cdn.make.com/img/make/ico-ytb-light.png]\r\n[https://www.youtube.com/channel/UC8KWRrf8wqyowmWhXJ9DRjQ]\r\n\r\n[https://us2.make.com/api/v2/notifications/mark-as-read-pixel.gif?id=16358258&amp;user=2118270&amp;sign=bf799b11f0d2f3c59e224eedd0631af0]\r\n ",
+      "thread_id": "1981e258220e85b2"
+    },
+    {
+      "id": "197c5658ef1665f1",
+      "from": "\"Celonis Inc.\" <card-expiring@make.com>",
+      "subject": "Please update your payment information",
+      "date": "Tue, 1 Jul 2025 09:50:55 +0000",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Celonis Inc.  (http://www.make.com)\r\n\r\nCelonis Inc.\r\n\r\nUpdate your card information\r\nThis is a friendly reminder that your Visa card ending in 0792 expires at the end of the month. Before it expires, please update your card information with Celonis Inc.. Update payment method (https://www.make.com/en/login?referer=expiring_card) Questions? Contact us at billing@make.com (billing@make.com).\r\n\r\nPowered by    stripe logo (https://stripe.com)  |   Learn more about Stripe Billing (https://stripe.com/billing)",
+      "thread_id": "197c5658ef1665f1"
+    },
+    {
+      "id": "1978ea3895b38a02",
+      "from": "Mariam from Softr <mariam@softr.io>",
+      "subject": "Thank you 🧡 + join us for a live Softr Databases event",
+      "date": "Fri, 20 Jun 2025 17:26:18 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "( https://studio.softr.io/dashboard )\r\n \r\n\r\nHi Rich,\r\n\r\nThanks to your amazing support, Softr Databases reached #2 Product of the Day ( https://www.producthunt.com/products/softr/launches/softr-databases ) on Product Hunt! We're grateful to have such a fantastic community of builders backing us. 🙏\r\n\r\nYour excitement for Softr Databases has been awesome, and we’d love to have you at our live event on Monday, June 23rd at 11AM EDT / 5PM CET, where you'll:\r\n\r\n✅ Get a demo of the database features you can start using today\r\n\r\n✅ See what’s coming next on the product roadmap\r\n\r\n✅ Ask your questions in a live Q&A with the people building Softr\r\n\r\n \r\n\r\nSave your spot ( https://my.demio.com/ref/Z22KgyMRmAzLwoAe )Hope to see you there!\r\n- Mariam, CEO, Softr \r\n\r\n Build software without devs. Blazingly fast.\r\n\r\nSoftr Twitter ( https://twitter.com/softr_io )\r\nSoftr LinkedIn ( https://www.linkedin.com/company/softr/posts/?feedView=all )Softr YouTube ( https://www.youtube.com/c/Softr )\r\n\r\nCopyright © 2025 Softr, All rights reserved.\r\n\r\nSoftr Platforms GmbH, Rosenthaler Straße 13, 10119 Berlin, Germany\r\n\r\nYou received this email because you're subscribed to softr.io ( https://www.softr.io/ ).\r\nYou can unsubscribe ( http://track.customer.io/unsubscribe/dgS3yAYDALXMJrTMJgGXjlWSMrKu7mxyEQ9wnUo= ) at anytime.\r\n",
+      "thread_id": "1978ea3895b38a02"
+    },
+    {
+      "id": "197880689b0b44df",
+      "from": "Mariam from Softr <mariam@softr.io>",
+      "subject": "Softr Databases is trending #1 on Product Hunt 😻",
+      "date": "Thu, 19 Jun 2025 11:46:48 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Thanks to your incredible support and love, Softr Databases is trending #1 on Product Hunt! 😻 🙌 \r\n\r\nIf you haven’t yet, we’d love for you to check it out and share your feedback.\r\n\r\nHere’s what users are saying after using it:\r\n\r\n”After playing around with Softr Databases, I can't ever see myself going back to Airtable.” \r\n\r\n \r\n\r\nUsed Databases already? If you have already used Softr Databases or Softr for your team, clients and elsewhere, leave a review here ❤️. ( https://www.producthunt.com/products/softr/reviews/new )\r\n\r\n \r\n\r\nLet's do this! 😻 ( https://www.producthunt.com/posts/softr-databases )Thank you! \r\n\r\n- Mariam and the Softr Team\r\n\r\nBuild software without devs. Blazingly fast.\r\n\r\nSoftr Twitter ( https://twitter.com/softr_io )\r\nSoftr LinkedIn ( https://www.linkedin.com/company/softr/posts/?feedView=all )Softr YouTube ( https://www.youtube.com/c/Softr )\r\n\r\nCopyright © 2023 Softr, All rights reserved.\r\nRosenthaler Straße 13, Berlin 10119, Germany\r\n\r\nYou received this email because you're subscribed to softr.io ( https://www.softr.io/ ).\r\n\r\nYou can unsubscribe ( http://track.customer.io/unsubscribe/dgS3yAYDALXMJrTMJgGXh_fhOtGj5eKTTDZuUCs= ) at anytime.\r\n",
+      "thread_id": "197880689b0b44df"
+    },
+    {
+      "id": "19787559297c3e7f",
+      "from": "Mariam from Softr <mariam@softr.io>",
+      "subject": "Softr Databases is live on Product Hunt 😻",
+      "date": "Thu, 19 Jun 2025 08:37:00 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Hi Rich,\r\n\r\nYesterday we launched Softr Databases — a new way to manage your data and power your business apps, all inside Softr.\r\n\r\nToday, we're sharing it with the world on Product Hunt and we’d love your support 🙌\r\n\r\n👉 Upvote Softr Databases ( https://www.producthunt.com/products/softr/launches/softr-databases )Thanks!\r\n\r\n- Mariam and the Softr Team\r\n\r\nBuild software without devs. Blazingly fast.\r\n\r\nSoftr Twitter ( https://twitter.com/softr_io )\r\nSoftr LinkedIn ( https://www.linkedin.com/company/softr/posts/?feedView=all )Softr YouTube ( https://www.youtube.com/c/Softr )\r\n\r\nCopyright © 2023 Softr, All rights reserved.\r\nRosenthaler Straße 13, Berlin 10119, Germany\r\n\r\nYou received this email because you're subscribed to softr.io ( https://www.softr.io/ ).\r\n\r\nYou can unsubscribe ( http://track.customer.io/unsubscribe/dgS3yAYDALXMJrTMJgGXh07A9uFymDpnyei8baY= ) at anytime.\r\n",
+      "thread_id": "19787559297c3e7f"
+    },
+    {
+      "id": "197821a303d747e0",
+      "from": "Mariam from Softr <mariam@softr.io>",
+      "subject": "🚀 Softr Databases: your new built-in data source",
+      "date": "Wed, 18 Jun 2025 08:11:18 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "( https://studio.softr.io/dashboard )\r\nSoftr Databases: Simpler. Faster. Built-in.\r\n\r\nHi Rich,\r\n\r\nWe’re excited to announce the launch of Softr Databases, a new way to manage your data directly inside Softr.\r\n\r\nNow you can build powerful applications without the need for an external data source. It’s the fastest way to go from idea to working product, in one place! \r\n\r\n✅ Create fast, powerful relational databases\r\n✅ Build full-stack apps without ever leaving Softr\r\n✅ No more relying on external databases with API limits\r\n\r\nAlready using Airtable, Notion, or Google Sheets?\r\n\r\nNo problem — you can still use your existing data sources or mix and match with Softr Databases where it makes sense. \r\n\r\nGet started in seconds\r\n\r\nSoftr Databases work out of the box, no extra setup required. Start from scratch, import a CSV, or use a template. Available to everyone, with record limits tailored to each plan ( https://www.softr.io/pricing ) so you can build with confidence.\r\n\r\n \r\n\r\nExplore Softr Databases ( https://studio.softr.io/dashboard/databases )\r\nWant to see Databases in action? Learn more in our blog post announcement ( https://www.softr.io/blog/softr-databases ) or watch the launch video ( https://www.youtube.com/watch?v=gIjdrawDKIk ). \r\n\r\n \r\n\r\nThanks for building with us!\r\n\r\n- Mariam, CEO, Softr \r\n\r\nP.S. We’re hosting a live event on Monday, June 23 at 11AM ET to dive deeper into Softr Databases and answer your questions. Save your spot here ( https://my.demio.com/ref/Z22KgyMRmAzLwoAe ).\r\n\r\n \r\nBuild software without devs. Blazingly fast.\r\n\r\nSoftr Twitter ( https://twitter.com/softr_io )Softr LinkedIn ( https://www.linkedin.com/company/softr/posts/?feedView=all )\r\nSoftr YouTube ( https://www.youtube.com/c/Softr )\r\n\r\nCopyright © 2025 Softr, All rights reserved.\r\n\r\nSoftr Platforms GmbH, Rosenthaler Straße 13, 10119 Berlin, Germany\r\n\r\nYou received this email because you're subscribed to softr.io ( https://www.softr.io/ ).\r\nYou can unsubscribe ( http://track.customer.io/unsubscribe/dgS3yAYDALXMJrTMJgGXgg7eh8t2pGIAGSYS6VM= ) at anytime.\r\n",
+      "thread_id": "197821a303d747e0"
+    },
+    {
+      "id": "1976d9c7a76ce913",
+      "from": "Google Cloud <CloudPlatform-noreply@google.com>",
+      "subject": "[Product Update] New security enhancement for your Google Cloud environment",
+      "date": "Sat, 14 Jun 2025 01:44:20 -0700",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Re-authentication will be required for sensitive actions starting July 2025.\r\n\r\n\r\n\r\n\r\nMY CONSOLE\r\n\r\n\r\n\r\n\r\nHello Rich,\r\n\r\nWe're reaching out with an important update regarding enhancing the  \r\nsecurity of sensitive actions in your Google Cloud environment. This update  \r\nstrengthens protection against unauthorized access to your critical Google  \r\nCloud resources.\r\n\r\nWe have provided additional information below to guide you through this  \r\nchange.\r\n\r\nWhat you need to know\r\n\r\nKey changes\r\n\r\nStarting in July 2025, to further protect your critical Google Cloud  \r\nresources, you will need to re-enter your password or complete multi-factor  \r\nauthentication (MFA) for certain sensitive actions. These actions include  \r\nbilling assignment changes and IAM policy changes at the Organization,  \r\nFolder, or Project level.\r\n\r\nThis additional authentication step ensures that only authorized users can  \r\nmake critical changes to billing and access control settings.\r\n\r\nRe-authentication limitations\r\n\r\nThis re-authentication will initially apply to Google Cloud Console users  \r\nwith Google Cloud Identity. It will not apply to programmatic user account  \r\naccess or external identities federated through Workforce Identity pools  \r\nand SSO.\r\n\r\nActions that require re-authentication\r\n\r\nSpecifically, you will be prompted to re-authenticate when performing the  \r\nfollowing actions (which correspond to these API calls):\r\n\r\n\r\nresourcemanager.organizations.setIamPolicy\r\nresourcemanager.folders.setIamPolicy\r\nresourcemanager.projects.setIamPolicy\r\nbilling.accounts.setIamPolicy\r\nbilling.accounts.move\r\nbilling.accounts.removeFromOrganization\r\nbilling.resourceAssociations.create\r\nbilling.resourceAssociations.delete\r\nresourcemanager.projects.deleteBillingAssignment\r\nresourcemanager.projects.createBillingAssignment\r\nresourcemanager.tagValueBindings.delete\r\n\r\nNote: Service accounts are not affected by these new re-authentication  \r\nrequirements.\r\n\r\nWhat you need to do\r\n\r\nNo action is required from you. This enhanced security will be  \r\nautomatically applied starting July 2025.\r\n\r\nWe're here to help\r\n\r\nYou can find more details about Reauthentication for Sensitive Actions in  \r\nour User Guide. If you have any questions or require assistance, please  \r\ncontact reauth-for-sensitive-actions@google.com.\r\n\r\nThank you for your understanding and cooperation as we work to improve  \r\nsecurity in Google Cloud.\r\n\r\nThanks for choosing Google Cloud.\r\n\r\n\r\n\r\n\r\n\r\n— The Google Cloud Team\r\n\r\n\r\n\r\n\r\n\r\nDOCUMENTATION\r\n\r\n\r\n\r\nSUPPORT\r\n\r\n\r\n\r\n\r\nWas this information helpful?\r\n\r\nYes Neutral No\r\n\r\n\r\n© 2025 Google LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043\r\n\r\nYou've received this mandatory service announcement to update you about  \r\nimportant changes to Google Cloud or your account.\r\n\r\n\r\n\r\nVisit Google Cloud blog Visit GCP on GitHub Visit Google Cloud on LinkedIn  \r\nVisit Google Cloud on Twitter\r\n\r\n\r\n\r\n\r\n",
+      "thread_id": "1976d9c7a76ce913"
+    },
+    {
+      "id": "197551bfe12ae445",
+      "from": "Make <info@make.com>",
+      "subject": "Update on our sub-processors list",
+      "date": "Mon, 09 Jun 2025 14:33:04 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "( https://www.make.com/en/?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )\r\nMake Updates Dear Business Partner,\r\n\r\n \r\n\r\nTo support our objectives of operational excellence and compliance with industry best practices, we continuously monitor the best options to deliver our products and services. \r\n\r\n \r\n\r\nAs of June 9, 2025 (for Enterprise Organizations July 9, 2025), our current list of sub-processors will be replaced by the updated list available here ( https://assets.ctfassets.net/un655fb9wln6/bAi9YXB2XP4fnAtZxkDOb/08a65fe743f91ec7026c07d3de2b8fc2/Make_Sub-Processors_June_2025.pdf?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io ). No action is required on your part, and you may continue to use your account as usual.\r\n\r\n \r\n\r\nWe will provide our services as described in the updated sub-processors list from the date mentioned above. \r\n\r\n \r\n\r\nIf you have any questions or concerns, please contact us at privacy@make.com ( privacy@make.com?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io ). If you no longer wish to use Make and would like to delete your account, please follow this guide ( https://help.make.com/delete-your-profile?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io ).\r\n\r\nThank you for your continued trust in our services.\r\n\r\nThe Make Data Privacy Team\r\n\r\nWeb Site ( https://www.make.com/en?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )Facebook ( https://www.facebook.com/itsMakeHQ/?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )\r\nLinkedIn ( https://www.linkedin.com/company/itsmakehq?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )Twitter ( https://twitter.com/make_hq?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )Instagram ( https://instagram.com/itsmakehq/?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )YouTube ( https://www.youtube.com/channel/UC8KWRrf8wqyowmWhXJ9DRjQ?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )\r\n  You're receiving this operational email because it contains information essential for management and security of your account. Any preferences or subscription settings do not apply.\r\n\r\nNeed assistance? Our care team ( https://www.make.com/en/ticket?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io ) is here to help.\r\n\r\nCelonis s.r.o., Menclova 2538/2, 180 00 Prague, Czechia \r\n\r\nManage your email subscription ( http://track.customer.io/manage_subscription_preferences/dgSE_wYDAN7MnAHdzJwBAZdU4S-cGSY4KnWs8Wan_w== ) | Privacy Policy ( https://www.make.com/en/privacy-notice?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io ) | Terms & Conditions ( https://www.make.com/en/terms-and-conditions?utm_campaign=Sub-Processors+List+Effective+June+9%2C+2025&utm_medium=email&utm_source=customer.io )",
+      "thread_id": "197551bfe12ae445"
+    },
+    {
+      "id": "1973d589c35cfb2d",
+      "from": "Exa Product Updates <updates@product.exa.ai>",
+      "subject": "Update: Deprecating scores in Auto search",
+      "date": "Wed, 04 Jun 2025 23:48:26 +0000",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Hey there,\r\n\r\nWe’re rolling out a major improvement to Auto search in our API. The new architecture doesn’t create meaningful relevance scores for results. As a result, we’re deprecating scores in Auto search on June 18th.\r\n\r\nIf your app uses Auto search scores, we recommend migrating as soon as possible. You can read more about search types in our docs here ( https://docs.exa.ai/reference/exas-capabilities-explained#search-types ).\r\nNote: Scores in Neural search results will remain unchanged.\r\nLet us know if you have any questions!\r\nCheers,\r\n\r\nExa Team\r\nClick here ( http://track.customer.io/unsubscribe/dgSs0AgDAIFEgEQBlz1YfMBZD8gyVT_LM4X7 ) to unsubscribe",
+      "thread_id": "1973d589c35cfb2d"
+    },
+    {
+      "id": "19729724c141a72f",
+      "from": "Google Developers <GoogleDevelopers-noreply@google.com>",
+      "subject": "[Correction] Updated list of your inactive OAuth clients list",
+      "date": "Sat, 31 May 2025 20:04:05 -0700",
+      "labels": [
+        "UNREAD",
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Google Developers logo\r\n\r\n\r\n\r\nReview your corrected list of inactive OAuth clients for accuracy.\r\n\r\n\r\n\r\nHello Google Developer,\r\n\r\nWe're writing to inform you that this serves as a correction to the  \r\ncommunication you might have received on May 28, 2025, titled “[Action  \r\nAdvised] Manage your unused OAuth clients and protect your information.”\r\n\r\nThere was an issue with our recipient list that caused some developers to  \r\nreceive incorrect information. This communication incorrectly included some  \r\nof your OAuth clients that have not been inactive for at least five months,  \r\nand will not be deleted.\r\n\r\nIf you received the previous communication, please disregard it. We  \r\nsincerely apologize for any confusion this may have caused.\r\n\r\nPlease refer to the message below which you should have received.\r\n\r\n\r\nWe're writing to inform you about an upcoming change that may affect your  \r\napplications and scripts using Google Auth Platform for Sign-in with Google  \r\nor for calling Google APIs.\r\n\r\nWhat you need to know\r\n\r\nAs we recently announced, starting June 2025, OAuth clients that have  \r\nremained inactive for six months will be automatically deleted. This change  \r\nhelps prevent credential theft and misuse.\r\n\r\nInactivity is determined based on the absence of token exchanges and client  \r\nupdates. Viewing an OAuth client on Google Cloud Console is not considered  \r\nactivity. After an OAuth client is deleted, you will have 30 days to  \r\nrestore it in the Google Auth Platform section of the Google Cloud Console.\r\n\r\nImpacted OAuth clients\r\n\r\nThe following OAuth clients that you manage have been inactive for at least  \r\nfive months. These will be deleted in a month unless you take action:\r\n\r\n\r\navid-truth-434123-e0 (167887354208)\r\n\r\n167887354208-cqd79gqkenm4cdf825in2ci9pqdthf9g.apps.googleusercontent.com\r\n\r\n\r\nWhat you need to do\r\n\r\nManage your unused clients\r\n\r\nTo prevent deletion of clients you wish to retain, initiate a Sign-in with  \r\nGoogle flow or exchange a refresh token for an access token for each client  \r\nlisted above.\r\n\r\nIf you no longer need these clients, no action is required from you. They  \r\nwill be deleted automatically after six months of inactivity. You will have  \r\nup to 30 days to restore them in the Google Cloud Console.\r\n\r\nProtect your applications\r\n\r\nTo protect your applications and enhance security, please adhere to the  \r\nfollowing best practices:\r\n\r\n\r\nNever check client secrets into version control systems, especially those  \r\nthat allow access to user data or other production systems\r\nNever share client secrets widely on the internet\r\nRotate client secrets periodically and change them immediately, if a data  \r\nbreach occurs\r\nKeep your developer contact information current to ensure you receive  \r\nfuture updates from us\r\n\r\n\r\nWe understand the importance of accurate communication and regret this  \r\nerror.\r\n\r\nSincerely,\r\n\r\n– The Google Cloud Team\r\n\r\n\r\n\r\n\r\nWas this information helpful?\r\n\r\nA smiling face A neutral face A sad face\r\n\r\n\r\n© 2025 Google LLC 1600 Amphitheatre Parkway, Mountain View, CA 94043\r\n\r\nYou have received this mandatory service announcement to update you about  \r\nimportant changes to Google services you use.\r\n\r\n\r\nTwitter Facebook LinkedIn YouTube\r\n\r\n\r\n\r\n",
+      "thread_id": "19729724c141a72f"
+    },
+    {
+      "id": "196eee67babdb468",
+      "from": "legal@softr.io",
+      "subject": "Updates to our Terms & notification of new sub-processors",
+      "date": "Tue, 20 May 2025 18:12:36 +0000",
+      "labels": [
+        "CATEGORY_UPDATES",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "Hi Rich,\r\n\r\n\r\nWe're writing to inform you about updates to our Terms, our Data Processing Agreement and our Sub-processors.\r\n\r\n \r\n\r\nKey updates to our Terms & Data Processions Agreement:\r\n\r\n- Updated our Data Processing Description to reference all types of data that Customers can upload to Softr\r\n- Clarified that data is only processed by AI-Tools if you choose to use AI-Tools in the platform\r\n- Clarified the liability provisions in the Data Processing Agreement\r\n\r\n\r\nIn addition we have updated the list of Softr's sub-processors. To support the delivery of our Services, Softr Platforms GmbH may engage and use data processors with access to certain Customer Data and this shall serve as notification that the following sub-processors will be added to support AI services **effective from June 21, 2025**:\r\n\r\n- OpenAI, LLC\r\n- Anthropic, PBC\r\n- Google Cloud EMEA Ltd\r\n\r\nThe use of AI-powered tools are opt-in features. If you choose not to use AI-powered tools, no data will be shared with these sub-processors. \r\n\r\nPlease note that the changes will not affect the pricing or the way we provide our services to you. For your convenience, we have made a version of the amended document available on our website via these links.\r\n \r\n\r\nTerms & Conditions: https://www.softr.io/terms\r\n\r\nData Processing Agreement: https://www.softr.io/dpa-v1\r\n\r\n \r\n\r\nThank you very much for your continued support!\r\n\r\nBest regards,\r\n\r\nSoftr team\r\n\r\n\r\nNote: This is a legal notice, which is why you are receiving it even if you have opted out of Softr marketing and promotional emails.\r\n\r\nCopyright © 2025 Softr, All rights reserved.\r\n\r\nSoftr Platforms GmbH, Rosenthaler Straße 13, 10119 Berlin, Germany\r\n",
+      "thread_id": "196eee67babdb468"
+    },
+    {
+      "id": "196eec136b7a834f",
+      "from": "Kate at Make <info@make.com>",
+      "subject": "🟣 Make AI Tools, MCP server & 2 work days saved monthly",
+      "date": "Tue, 20 May 2025 17:32:41 +0000",
+      "labels": [
+        "CATEGORY_PROMOTIONS",
+        "UNREAD",
+        "INBOX"
+      ],
+      "snippet": "",
+      "full_content": "( https://www.make.com/en/login?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n( https://www.make.com/en/login?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n( https://www.make.com/en/blog/make-ai-tools-at-your-fingertips?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Hot News: Make AI Tools are here! 🔥\r\n\r\n \r\n\r\nModels, prompts, tokens, temperature — feeling overwhelmed by AI? With Make AI Tools, there’s no need for LLM accounts, third-party apps, or difficult prompts. Get powerful AI features like sentiment analysis, summarization, translation, text extraction, and more — all right inside Make. Now live on all paid plans.\r\n\r\nTry the open beta today ( https://www.make.com/en/blog/make-ai-tools-at-your-fingertips?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Try the open beta today ➜ ( https://www.make.com/en/blog/make-ai-tools-at-your-fingertips?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n\r\n \r\n\r\n( https://www.make.com/en/blog/model-context-protocol-mcp-server?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Feature Spotlight: Make MCP server\r\n\r\n \r\n\r\nReady to explore the engine behind smarter AI? Make MCP server lets AI Agents discover scenarios, outlines how they work, and helps ensure they're used correctly as tools – it's the next step for agentic automation. \r\n\r\nSet up your MCP server ( https://www.make.com/en/blog/model-context-protocol-mcp-server?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Set up your MCP server ➜ ( https://www.make.com/en/blog/model-context-protocol-mcp-server?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n\r\n( https://www.make.com/en/waves?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\nWaves '25: Super Early Bird tickets on sale now\r\n\r\n \r\n\r\nJoin 700+ Makers, AI innovators, and automation pros in Munich on October 16 for our biggest event yet. Product updates, hands-on sessions, networking, plus exciting optional extras. Tickets are just €199 for a limited time.\r\n\r\nGet your ticket now ( https://www.make.com/en/waves?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Get your ticket now ➜ ( https://www.make.com/en/waves?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n\r\n \r\n\r\n( https://www.make.com/en/success-stories/bolt-eliminates-manual-follow-ups-with-make?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Customer Stories: Bolt gets 2 days back\r\n\r\n \r\n\r\nWhat do you get when you automate 800+ HR follow-ups? With Make, Bolt got 2 fewer days of work per team member per month and an onboarding process that runs smoother, faster, and almost hands-free. \r\n\r\nSee how they did it ( https://www.make.com/en/success-stories/bolt-eliminates-manual-follow-ups-with-make?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )See how they did it ➜ ( https://www.make.com/en/success-stories/bolt-eliminates-manual-follow-ups-with-make?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n\r\n( https://www.make.com/en/use-cases/ai-automation-newsletters-and-podcasts?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\nTutorial: Automate newsletter and podcast creation with AI\r\n\r\n \r\n\r\nWhat if your newsletter wrote and narrated itself? Our newest step-by-step tutorial shows you how AI can grab the latest news, write it up, and turn it into a podcast – all on autopilot. Want to try it yourself?\r\n\r\nFollow the guide ( https://www.make.com/en/use-cases/ai-automation-newsletters-and-podcasts?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Follow the guide ➜ ( https://www.make.com/en/use-cases/ai-automation-newsletters-and-podcasts?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n\r\n \r\n\r\nWant to see what else is new in Make? Check out our monthly release roundup and level up your automation with fresh power moves: Amazon Bedrock brings cutting-edge AI, Facebook Pages just got smarter, Apify Scraper lets you grab data like a pro, Microsoft Advertising Campaigns puts your marketing on autopilot, and much more!\r\n\r\nRead what's new ( https://community.make.com/t/releases-on-make-april-2025/82159?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Read what's new ➜ ( https://community.make.com/t/releases-on-make-april-2025/82159?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n\r\n \r\n\r\nPsst... Did you also know we're on a quest for some extraordinary folks to join our crew?\r\nTake a sneak peek at our current openings:\r\n\r\n \r\n\r\nProduct Growth Expert ( https://www.make.com/en/careers-detail?gh_jid=6538984003&utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io ) | Senior Software Engineer ( https://www.make.com/en/careers-detail?gh_jid=6265330003&utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io ) | Senior Data Engineer ( https://www.make.com/en/careers-detail?gh_jid=6305014003&utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n\r\n \r\n\r\nExplore these opportunities and more on our Career Page ( https://www.make.com/en/careers?location=All+Offices&department=All+Departments&utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io ).\r\n\r\n \r\n\r\n We're glad you're here!\r\n\r\nThe Make Team\r\n\r\nWeb Site ( https://www.make.com/en?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\nFacebook ( https://www.facebook.com/itsMakeHQ/?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )LinkedIn ( https://www.linkedin.com/company/itsmakehq?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Twitter ( https://twitter.com/make_hq?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )Instagram ( https://instagram.com/itsmakehq/?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\nYouTube ( https://www.youtube.com/channel/UC8KWRrf8wqyowmWhXJ9DRjQ?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )\r\n  You're receiving this email because you're subscribed to Newsletter & Blog ( http://track.customer.io/manage_subscription_preferences/dgSE_wYDAN7MnAHdzJwBAZbuj8IM_wSRqs9BZ1RY5w== ). \r\n\r\n \r\n\r\nNeed assistance? Our care team ( https://www.make.com/en/ticket?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io ) is here to help.\r\n\r\nCelonis s.r.o., Menclova 2538/2, 180 00 Prague, Czechia \r\n\r\nUnsubscribe ( http://track.customer.io/manage_subscription_preferences/dgSE_wYDAN7MnAHdzJwBAZbuj8IM_wSRqs9BZ1RY5w== ) | ( https://www.make.com/en/privacy-notice?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io ) Privacy Policy ( https://www.make.com/en/privacy-notice?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io ) | Terms & Conditions ( https://www.make.com/en/terms-and-conditions?utm_campaign=Make+AI+Tools%2C+MCP+server+%26+2+work+days+saved+monthly&utm_medium=email&utm_source=customer.io )",
+      "thread_id": "196eec136b7a834f"
+    }
+  ]
+}

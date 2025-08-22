@@ -1,0 +1,17 @@
+# Gmail API and Authentication
+google-auth>=2.23.0
+google-auth-oauthlib>=1.1.0
+google-auth-httplib2>=0.1.1
+google-api-python-client>=2.108.0
+
+# Encryption for secure token storage
+cryptography>=41.0.0
+
+# Additional utilities (pathlib2 not needed for Python 3.7+)
+typing-extensions>=4.12.0
+
+# OpenAI API for email classification
+openai>=1.0.0
+
+# Environment variable management
+python-dotenv>=1.0.0
