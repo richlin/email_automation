@@ -37,7 +37,7 @@ def save_email_data_to_json(messages):
         })
     
     # Generate filename with timestamp
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    timestamp = datetime.now().strftime("%Y%m%d")
     filename = f"email_data_{timestamp}.json"
     filepath = os.path.join(temp_data_dir, filename)
     

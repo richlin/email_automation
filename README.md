@@ -62,7 +62,7 @@ An intelligent email management system that automatically categorizes and organi
    ```
 
 3. **Set up Google Cloud credentials**
-   - Follow the [Setup Guide](SETUP_GUIDE.md) to configure Gmail API
+   - Follow the [GCP Setup Guide](GCP_SETUP_GUIDE.md) to configure Gmail API
    - Download `credentials.json` and place it in the project root
    - Set up your `.env` file with OpenAI API key
 
@@ -98,7 +98,7 @@ email_automation/
 ├── main.py                 # Complete demo with Gmail integration
 ├── example_classifier.py   # Email classification demo
 ├── requirements.txt        # Python dependencies
-├── SETUP_GUIDE.md         # Detailed setup instructions
+├── GCP_SETUP_GUIDE.md     # GCP setup instructions
 ├── PRD_Email_Automation.md # Product requirements document
 ├── temp_data/             # Email data storage (auto-created)
 │   └── *.json             # Exported email data files
@@ -118,55 +118,7 @@ email_automation/
 - **Automatic Token Refresh** - Handles token expiration automatically
 - **No Hardcoded Credentials** - All credentials are stored securely
 
-## 📊 Example Usage
 
-### Basic Gmail Authentication
-```python
-from utils.gmail_auth import GmailAuthenticator
-
-# Initialize authenticator
-auth = GmailAuthenticator()
-
-# Authenticate (first time opens browser)
-service = auth.authenticate(use_encryption=True)
-
-if service:
-    # Get user information
-    user_info = auth.get_user_info(service)
-    print(f"Connected to: {user_info['email']}")
-    
-    # Fetch recent messages
-    results = service.users().messages().list(userId='me', maxResults=10).execute()
-    messages = results.get('messages', [])
-    
-    print(f"Found {len(messages)} messages")
-```
-
-### AI-Powered Email Classification
-```python
-from utils.email_classifier import create_email_classifier
-from utils.data_loader import load_email_data_from_temp_data
-
-# Create classifier
-classifier = create_email_classifier()
-
-# Load email data
-emails = load_email_data_from_temp_data()
-
-# Classify emails
-for email in emails:
-    classification, token_usage = classifier.classify_email(
-        subject=email['subject'],
-        sender=email['sender'],
-        content=email['content'],
-        labels=email['labels']
-    )
-    
-    print(f"Category: {classification.category}")
-    print(f"Priority: {classification.priority}")
-    print(f"Action Required: {classification.action_required}")
-    print(f"Tokens Used: {token_usage['total_tokens']}")
-```
 
 ## 🎯 Use Cases
 
@@ -249,10 +201,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🆘 Support
 
-- **Documentation**: [Setup Guide](SETUP_GUIDE.md)
+- **Documentation**: [GCP Setup Guide](GCP_SETUP_GUIDE.md)
 - **Issues**: Create an issue on GitHub
 - **Questions**: Check the troubleshooting section in the setup guide
-- **Setup Help**: Follow the step-by-step instructions in SETUP_GUIDE.md
+- **Setup Help**: Follow the step-by-step instructions in GCP_SETUP_GUIDE.md
 
 ## 🔮 Roadmap
 
