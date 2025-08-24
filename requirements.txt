@@ -7,7 +7,7 @@ google-api-python-client>=2.108.0
 # Encryption for secure token storage
 cryptography>=41.0.0
 
-# Additional utilities (pathlib2 not needed for Python 3.7+)
+# Additional utilities
 typing-extensions>=4.12.0
 
 # OpenAI API for email classification
@@ -15,3 +15,25 @@ openai>=1.0.0
 
 # Environment variable management
 python-dotenv>=1.0.0
+
+# Streamlit for web application
+streamlit>=1.28.0
+
+# Data processing and analysis
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Date and time utilities
+python-dateutil>=2.8.0
+
+# JSON handling and data serialization
+jsonschema>=4.17.0
+
+# Logging and debugging
+colorama>=0.4.6
+
+# HTTP requests and API calls
+requests>=2.31.0
+
+# Configuration management
+pyyaml>=6.0.0

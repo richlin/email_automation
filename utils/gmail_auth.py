@@ -31,6 +31,7 @@ from googleapiclient.errors import HttpError
 from cryptography.fernet import Fernet
 from cryptography.hazmat.primitives import hashes
 from cryptography.hazmat.primitives.kdf.pbkdf2 import PBKDF2HMAC
+from .config import config
 
 
 class GmailAuthenticator:
@@ -53,23 +54,24 @@ class GmailAuthenticator:
     ]
     
     def __init__(self, 
-                 credentials_file: str = 'credentials.json',
+                 credentials_file: Optional[str] = None,
                  token_file: str = 'token.pickle',
                  encrypted_token_file: str = 'encrypted_token.json',
-                 config_dir: str = '.gmail_auth'):
+                 config_dir: Optional[str] = None):
         """
         Initialize the Gmail authenticator.
         
         Args:
-            credentials_file: Path to OAuth 2.0 credentials JSON file
+            credentials_file: Path to OAuth 2.0 credentials JSON file. If not provided, uses GMAIL_CREDENTIALS_FILE from .env
             token_file: Path to store unencrypted tokens (for development)
             encrypted_token_file: Path to store encrypted tokens (production)
-            config_dir: Directory to store configuration files
+            config_dir: Directory to store configuration files. If not provided, uses GMAIL_AUTH_CONFIG_DIR from .env
         """
-        self.credentials_file = credentials_file
+        # Use environment variables if not provided
+        self.credentials_file = credentials_file or config.GMAIL_CREDENTIALS_FILE
         self.token_file = token_file
         self.encrypted_token_file = encrypted_token_file
-        self.config_dir = Path(config_dir)
+        self.config_dir = Path(config_dir or config.GMAIL_AUTH_CONFIG_DIR)
         self.config_dir.mkdir(exist_ok=True)
         
         # Encryption key for secure token storage
@@ -255,38 +257,7 @@ class GmailAuthenticator:
             print(f"Authentication failed: {e}")
             return None
     
-    def get_accounts(self) -> Dict[str, Credentials]:
-        """Get all authenticated accounts."""
-        return self.accounts.copy()
-    
-    def remove_account(self, account_id: str):
-        """Remove an account and its stored credentials."""
-        # Remove from memory
-        if account_id in self.accounts:
-            del self.accounts[account_id]
-        
-        # Remove encrypted token
-        tokens_file = self.config_dir / self.encrypted_token_file
-        if tokens_file.exists():
-            try:
-                with open(tokens_file, 'r') as f:
-                    all_tokens = json.load(f)
-                
-                if account_id in all_tokens:
-                    del all_tokens[account_id]
-                    
-                    with open(tokens_file, 'w') as f:
-                        json.dump(all_tokens, f, indent=2)
-            except Exception as e:
-                print(f"Error removing encrypted token: {e}")
-        
-        # Remove unencrypted token
-        token_file = self.config_dir / f"{account_id}_{self.token_file}"
-        if token_file.exists():
-            try:
-                token_file.unlink()
-            except Exception as e:
-                print(f"Error removing token file: {e}")
+
     
     def test_connection(self, service) -> bool:
         """Test the Gmail API connection."""
@@ -315,38 +286,4 @@ class GmailAuthenticator:
             return None
 
 
-def main():
-    """Example usage of the GmailAuthenticator."""
-    print("Gmail Authentication Example")
-    print("=" * 40)
-    
-    # Initialize authenticator
-    auth = GmailAuthenticator()
-    
-    # Authenticate (this will open browser for OAuth flow)
-    print("Starting authentication...")
-    service = auth.authenticate(use_encryption=True)
-    
-    if service:
-        print("✅ Authentication successful!")
-        
-        # Test connection
-        if auth.test_connection(service):
-            # Get user info
-            user_info = auth.get_user_info(service)
-            if user_info:
-                print(f"📧 Email: {user_info['email']}")
-                print(f"👤 Name: {user_info['name']}")
-                print(f"📨 Total Messages: {user_info['messages_total']}")
-                print(f"🧵 Total Threads: {user_info['threads_total']}")
-        
-        # List authenticated accounts
-        accounts = auth.get_accounts()
-        print(f"\n🔐 Authenticated accounts: {list(accounts.keys())}")
-        
-    else:
-        print("❌ Authentication failed!")
 
-
-if __name__ == '__main__':
-    main()

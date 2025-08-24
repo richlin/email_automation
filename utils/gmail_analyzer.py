@@ -19,6 +19,7 @@ from typing import List, Dict, Any
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from utils.gmail_auth import GmailAuthenticator
+from utils.config import config
 
 
 class GmailAnalyzer:
@@ -58,7 +59,7 @@ class GmailAnalyzer:
             print(f"❌ Authentication error: {e}")
             return False
     
-    def get_recent_messages(self, max_results: int = 10) -> List[Dict[str, Any]]:
+    def get_recent_messages(self, max_results: int = 10, skip_archived: bool = True) -> List[Dict[str, Any]]:
         """Get recent messages with full content."""
         if not self.service:
             print("❌ Not authenticated!")
@@ -67,11 +68,19 @@ class GmailAnalyzer:
         try:
             print(f"📨 Fetching last {max_results} messages with full content...")
             
-            # Get message IDs
-            results = self.service.users().messages().list(
-                userId='me',
-                maxResults=max_results
-            ).execute()
+            # Get message IDs - only from INBOX if skip_archived is True
+            if skip_archived:
+                print("📬 Filtering to only include non-archived emails (INBOX label)...")
+                results = self.service.users().messages().list(
+                    userId='me',
+                    maxResults=max_results,
+                    labelIds=['INBOX']  # Only get messages with INBOX label
+                ).execute()
+            else:
+                results = self.service.users().messages().list(
+                    userId='me',
+                    maxResults=max_results
+                ).execute()
             
             messages = results.get('messages', [])
             if not messages:
@@ -191,61 +200,264 @@ class GmailAnalyzer:
             # Count labels
             for label in msg['labelIds']:
                 analysis['labels'][label] = analysis['labels'].get(label, 0) + 1
-            
-            # Analyze subjects (simple keyword extraction)
-            subject = msg['subject'].lower()
-            words = subject.split()
-            for word in words[:5]:  # First 5 words
-                if len(word) > 3:  # Skip short words
-                    analysis['subjects'][word] = analysis['subjects'].get(word, 0) + 1
-        
+                    
         return analysis
     
-    def display_analysis(self, analysis: Dict[str, Any]):
-        """Display the analysis results."""
-        print("\n📊 Message Analysis Results")
-        print("=" * 50)
-        
-        print(f"📨 Total messages analyzed: {analysis['total_messages']}")
-        
-        # Top senders
-        print(f"\n👥 Top senders:")
-        top_senders = sorted(analysis['senders'].items(), key=lambda x: x[1], reverse=True)[:5]
-        for sender, count in top_senders:
-            print(f"   {sender}: {count} messages")
-        
-        # Top labels
-        print(f"\n🏷️  Most common labels:")
-        top_labels = sorted(analysis['labels'].items(), key=lambda x: x[1], reverse=True)[:5]
-        for label, count in top_labels:
-            print(f"   {label}: {count} messages")
-        
-        # Top subject words
-        print(f"\n📝 Most common subject words:")
-        top_words = sorted(analysis['subjects'].items(), key=lambda x: x[1], reverse=True)[:10]
-        for word, count in top_words:
-            print(f"   '{word}': {count} occurrences")
+
+            
+
     
-    def get_labels(self) -> List[Dict[str, Any]]:
-        """Get all Gmail labels."""
+    def add_labels_to_message(self, message_id: str, label_ids: List[str]) -> bool:
+        """
+        Add labels to a specific email message.
+        
+        Args:
+            message_id (str): The ID of the email message
+            label_ids (List[str]): List of label IDs to add to the message
+            
+        Returns:
+            bool: True if successful, False otherwise
+        """
         if not self.service:
-            return []
+            print("❌ Not authenticated!")
+            return False
+        
+        if not label_ids:
+            print("❌ No label IDs provided!")
+            return False
+        
+        try:
+            print(f"🏷️  Adding labels to message {message_id}...")
+            
+            # Modify the message to add labels
+            result = self.service.users().messages().modify(
+                userId='me',
+                id=message_id,
+                body={'addLabelIds': label_ids}
+            ).execute()
+            
+            print(f"✅ Successfully added labels to message {message_id}")
+            print(f"📧 Message now has labels: {result.get('labelIds', [])}")
+            
+            return True
+            
+        except Exception as e:
+            print(f"❌ Error adding labels to message: {e}")
+            return False
+    
+
+    
+    def create_label(self, label_name: str, label_list_visibility: str = 'labelShow', 
+                    message_list_visibility: str = 'show') -> Dict[str, Any]:
+        """
+        Create a new Gmail label.
+        
+        Args:
+            label_name (str): Name of the label to create
+            label_list_visibility (str): Visibility of the label in the label list
+            message_list_visibility (str): Visibility of the label in the message list
+            
+        Returns:
+            Dict[str, Any]: The created label object or empty dict if failed
+        """
+        if not self.service:
+            print("❌ Not authenticated!")
+            return {}
+        
+        try:
+            print(f"🏷️  Creating new label: {label_name}")
+            
+            label_object = {
+                'name': label_name,
+                'labelListVisibility': label_list_visibility,
+                'messageListVisibility': message_list_visibility
+            }
+            
+            result = self.service.users().labels().create(
+                userId='me',
+                body=label_object
+            ).execute()
+            
+            print(f"✅ Successfully created label: {result['name']} (ID: {result['id']})")
+            return result
+            
+        except Exception as e:
+            print(f"❌ Error creating label: {e}")
+            return {}
+    
+    def find_label_by_name(self, label_name: str) -> Dict[str, Any]:
+        """
+        Find a label by its name.
+        
+        Args:
+            label_name (str): Name of the label to find
+            
+        Returns:
+            Dict[str, Any]: The label object if found, empty dict otherwise
+        """
+        if not self.service:
+            print("❌ Not authenticated!")
+            return {}
         
         try:
             results = self.service.users().labels().list(userId='me').execute()
             labels = results.get('labels', [])
             
-            print(f"\n🏷️  Found {len(labels)} labels:")
-            for label in labels[:10]:  # Show first 10
-                print(f"   - {label['name']} (ID: {label['id']})")
+            for label in labels:
+                if label['name'].lower() == label_name.lower():
+                    return label
             
-            if len(labels) > 10:
-                print(f"   ... and {len(labels) - 10} more")
-            
-            return labels
+            print(f"❌ Label '{label_name}' not found")
+            return {}
             
         except Exception as e:
-            print(f"❌ Error fetching labels: {e}")
-            return []
+            print(f"❌ Error finding label: {e}")
+            return {}
+    
+    def add_labels_by_name(self, message_id: str, label_names: List[str]) -> bool:
+        """
+        Add labels to a message by label names (not IDs).
+        
+        Args:
+            message_id (str): The ID of the email message
+            label_names (List[str]): List of label names to add to the message
+            
+        Returns:
+            bool: True if successful, False otherwise
+        """
+        if not label_names:
+            print("❌ No label names provided!")
+            return False
+        
+        label_ids = []
+        for label_name in label_names:
+            label = self.find_label_by_name(label_name)
+            if label:
+                label_ids.append(label['id'])
+                print(f"✅ Found label '{label_name}' with ID: {label['id']}")
+            else:
+                print(f"❌ Label '{label_name}' not found, skipping...")
+        
+        if label_ids:
+            return self.add_labels_to_message(message_id, label_ids)
+        else:
+            print("❌ No valid labels found to add!")
+            return False
+    
+
+    
+    def archive_messages_by_label(self, label_name: str, dry_run: bool = True) -> Dict[str, Any]:
+        """
+        Archive all messages within a specific label by removing the INBOX label.
+        
+        Args:
+            label_name (str): Name of the label to archive messages from
+            dry_run (bool): If True, only show what would be archived without actually archiving
+            
+        Returns:
+            Dict[str, Any]: Results of the operation including count of messages found/archived
+        """
+        if not self.service:
+            print("❌ Not authenticated!")
+            return {'success': False, 'error': 'Not authenticated'}
+        
+        try:
+            # Find the label by name
+            label = self.find_label_by_name(label_name)
+            if not label:
+                return {'success': False, 'error': f'Label "{label_name}" not found'}
+            
+            label_id = label['id']
+            print(f"🏷️  Found label '{label_name}' with ID: {label_id}")
+            
+            # Get all messages with this label
+            print(f"📨 Searching for messages with label '{label_name}'...")
+            results = self.service.users().messages().list(
+                userId='me',
+                labelIds=[label_id]
+            ).execute()
+            
+            messages = results.get('messages', [])
+            message_count = len(messages)
+            
+            if message_count == 0:
+                print(f"📭 No messages found with label '{label_name}'")
+                return {'success': True, 'messages_found': 0, 'messages_archived': 0}
+            
+            print(f"📊 Found {message_count} messages with label '{label_name}'")
+            
+            if dry_run:
+                print(f"🔍 DRY RUN: Would archive {message_count} messages")
+                print("   (Set dry_run=False to actually archive)")
+                
+                # Show first few messages for preview
+                print("\n📋 Preview of messages that would be archived:")
+                for i, msg in enumerate(messages[:5]):
+                    try:
+                        msg_detail = self.service.users().messages().get(
+                            userId='me',
+                            id=msg['id'],
+                            format='metadata',
+                            metadataHeaders=['From', 'Subject', 'Date']
+                        ).execute()
+                        
+                        headers = msg_detail['payload']['headers']
+                        from_header = next((h['value'] for h in headers if h['name'] == 'From'), 'Unknown')
+                        subject_header = next((h['value'] for h in headers if h['name'] == 'Subject'), 'No Subject')
+                        
+                        print(f"   {i+1}. From: {from_header}")
+                        print(f"      Subject: {subject_header}")
+                        print(f"      ID: {msg['id']}")
+                        print()
+                        
+                    except Exception as e:
+                        print(f"   {i+1}. Error getting message details: {e}")
+                
+                if message_count > 5:
+                    print(f"   ... and {message_count - 5} more messages")
+                
+                return {
+                    'success': True, 
+                    'messages_found': message_count, 
+                    'messages_archived': 0,
+                    'dry_run': True
+                }
+            
+            else:
+                # Actually archive the messages by removing INBOX label
+                print(f"📦 Archiving {message_count} messages...")
+                archived_count = 0
+                
+                for msg in messages:
+                    try:
+                        # Remove the INBOX label to archive the message
+                        result = self.service.users().messages().modify(
+                            userId='me',
+                            id=msg['id'],
+                            body={'removeLabelIds': ['INBOX']}
+                        ).execute()
+                        
+                        archived_count += 1
+                        
+                        if archived_count % 10 == 0:  # Progress update every 10 messages
+                            print(f"   Progress: {archived_count}/{message_count} messages archived")
+                            
+                    except Exception as e:
+                        print(f"❌ Error archiving message {msg['id']}: {e}")
+                
+                print(f"✅ Successfully archived {archived_count}/{message_count} messages")
+                
+                return {
+                    'success': True,
+                    'messages_found': message_count,
+                    'messages_archived': archived_count,
+                    'dry_run': False
+                }
+                
+        except Exception as e:
+            print(f"❌ Error archiving messages by label: {e}")
+            return {'success': False, 'error': str(e)}
+    
+
     
 
