@@ -600,35 +600,30 @@ with tab3:
                                     
                                     # Show comprehensive token usage summary
                                     if 'token_usages' in locals() and token_usages:
-                                        total_tokens = sum(usage.get('total_tokens', 0) for usage in token_usages)
-                                        total_prompt_tokens = sum(usage.get('prompt_tokens', 0) for usage in token_usages)
-                                        total_completion_tokens = sum(usage.get('completion_tokens', 0) for usage in token_usages)
-                                        avg_tokens_per_email = total_tokens / len(token_usages) if token_usages else 0
-                                        
-                                        # Estimate cost (assuming GPT-4 pricing)
-                                        estimated_cost = (total_tokens / 1000) * 0.03  # Rough estimate
+                                        # Use the get_token_usage_summary function
+                                        token_summary = st.session_state.email_classifier.get_token_usage_summary(token_usages)
                                         
                                         st.subheader("🔢 AI Token Usage & Cost")
                                         
                                         # Main metrics
                                         col1, col2, col3, col4 = st.columns(4)
                                         with col1:
-                                            st.metric("Total Tokens", f"{total_tokens:,}")
+                                            st.metric("Total Tokens", f"{token_summary['total_tokens']:,}")
                                         with col2:
-                                            st.metric("Prompt Tokens", f"{total_prompt_tokens:,}")
+                                            st.metric("Prompt Tokens", f"{token_summary['total_prompt_tokens']:,}")
                                         with col3:
-                                            st.metric("Completion Tokens", f"{total_completion_tokens:,}")
+                                            st.metric("Completion Tokens", f"{token_summary['total_completion_tokens']:,}")
                                         with col4:
-                                            st.metric("Avg/Email", f"{avg_tokens_per_email:.0f}")
+                                            st.metric("Avg/Email", f"{token_summary['average_tokens_per_email']:.0f}")
                                         
                                         # Cost and efficiency metrics
                                         col1, col2, col3 = st.columns(3)
                                         with col1:
-                                            st.metric("Estimated Cost", f"${estimated_cost:.4f}")
+                                            st.metric("Estimated Cost", f"${token_summary['estimated_cost_usd']:.4f}")
                                         with col2:
                                             st.metric("Emails Processed", len(token_usages))
                                         with col3:
-                                            st.metric("Model Used", "GPT-4")
+                                            st.metric("Model Used", token_summary['model'])
                                         
                                     
                                     # Show category distribution
