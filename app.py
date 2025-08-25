@@ -168,10 +168,18 @@ with tab1:
             if st.button("📥 Fetch Emails", type="primary"):
                 with st.spinner("Fetching emails..."):
                     try:
+                        # Step 1: Clean existing email data
+                        from utils.data_export import clean_email_data_folder
+                        success, deleted_count, deleted_files = clean_email_data_folder()
+                        if not success:
+                            st.error("❌ Failed to clean existing email data")
+                            st.stop()
+                                                
                         # Convert "All" to a large number
                         max_results = 1000 if email_count == "All" else email_count
                         
-                        # Fetch emails (following test_fetch_email.py logic)
+                        # Step 2: Fetch emails (following test_fetch_email.py logic)
+                        st.info("📥 Fetching new emails...")
                         emails = st.session_state.gmail_analyzer.get_recent_messages(
                             max_results=max_results,
                             skip_archived=True
@@ -469,7 +477,6 @@ with tab3:
             
             # Show loaded categories for editing
             if hasattr(st.session_state, 'loaded_categories') and st.session_state.loaded_categories:
-                st.write(f"**Editing file:** {st.session_state.selected_category_file}")
                 
                 # Text area for editing categories (one per line)
                 categories_text = "\n".join(st.session_state.loaded_categories)
@@ -539,17 +546,7 @@ with tab3:
                 # Check if we have email data
                 if hasattr(st.session_state, 'sample_emails') and st.session_state.sample_emails:
                     st.success(f"✅ {len(st.session_state.sample_emails)} emails available")
-                    
-                    # Debug info (can be removed later)
-                    with st.expander("🔍 Debug Info"):
-                        st.write(f"**Session State Keys:** {list(st.session_state.keys())}")
-                        if hasattr(st.session_state, 'emails_data'):
-                            st.write(f"**emails_data:** {len(st.session_state.emails_data)} emails")
-                        if hasattr(st.session_state, 'sample_emails'):
-                            st.write(f"**sample_emails:** {len(st.session_state.sample_emails)} emails")
-                            if st.session_state.sample_emails:
-                                st.write(f"**First email keys:** {list(st.session_state.sample_emails[0].keys())}")
-                    
+                                        
                     # Apply categories button
                     if st.button("🎯 Apply Categories to Emails", type="primary", key="apply_categories_button"):
                         with st.spinner("Applying categories to emails..."):
@@ -686,7 +683,6 @@ with tab3:
                                                 existing_label = st.session_state.gmail_analyzer.find_label_by_name(category)
                                                 if existing_label:
                                                     existing_labels.append(category)
-                                                    st.info(f"ℹ️ Label '{category}' already exists")
                                                 else:
                                                     # Create label in Gmail only if it doesn't exist
                                                     label_result = st.session_state.gmail_analyzer.create_label(category)

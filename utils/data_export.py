@@ -6,8 +6,46 @@ This module provides functionality for exporting email data to various formats.
 
 import json
 import os
-from datetime import datetime
 import glob
+import shutil
+from datetime import datetime
+
+
+def clean_email_data_folder():
+    """Delete all existing email data files in temp_data/email_data folder."""
+    temp_data_dir = "temp_data/email_data"
+    
+    if not os.path.exists(temp_data_dir):
+        print(f"📁 Email data directory doesn't exist: {temp_data_dir}")
+        return True, 0, []
+    
+    try:
+        # Find all JSON files in the email_data directory
+        json_files = glob.glob(os.path.join(temp_data_dir, "*.json"))
+        
+        if not json_files:
+            print("📭 No existing email data files found to delete")
+            return True, 0, []
+        
+        # Delete each file
+        deleted_count = 0
+        deleted_files = []
+        for filepath in json_files:
+            try:
+                filename = os.path.basename(filepath)
+                os.remove(filepath)
+                deleted_count += 1
+                deleted_files.append(filename)
+                print(f"🗑️  Deleted: {filename}")
+            except Exception as e:
+                print(f"❌ Error deleting {filepath}: {e}")
+        
+        print(f"✅ Successfully deleted {deleted_count} email data files")
+        return True, deleted_count, deleted_files
+        
+    except Exception as e:
+        print(f"❌ Error cleaning email data folder: {e}")
+        return False, 0, []
 
 
 def save_email_data_to_json(messages):
@@ -52,9 +90,6 @@ def save_email_data_to_json(messages):
     except Exception as e:
         print(f"❌ Error saving email data: {e}")
         return None
-
-
-
 
 
 def load_classification_data(filename):

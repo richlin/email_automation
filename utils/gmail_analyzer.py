@@ -226,9 +226,7 @@ class GmailAnalyzer:
             print("❌ No label IDs provided!")
             return False
         
-        try:
-            print(f"🏷️  Adding labels to message {message_id}...")
-            
+        try:            
             # Modify the message to add labels
             result = self.service.users().messages().modify(
                 userId='me',
@@ -236,8 +234,7 @@ class GmailAnalyzer:
                 body={'addLabelIds': label_ids}
             ).execute()
             
-            print(f"✅ Successfully added labels to message {message_id}")
-            print(f"📧 Message now has labels: {result.get('labelIds', [])}")
+            print(f"📧 Message {message_id} now has labels: {result.get('labelIds', [])}")
             
             return True
             
@@ -265,12 +262,6 @@ class GmailAnalyzer:
             return {}
         
         try:
-            # Check if label already exists first
-            existing_label = self.find_label_by_name(label_name)
-            if existing_label:
-                print(f"ℹ️  Label '{label_name}' already exists (ID: {existing_label['id']})")
-                return existing_label
-            
             print(f"🏷️  Creating new label: {label_name}")
             
             label_object = {
@@ -340,7 +331,6 @@ class GmailAnalyzer:
             label = self.find_label_by_name(label_name)
             if label:
                 label_ids.append(label['id'])
-                print(f"✅ Found label '{label_name}' with ID: {label['id']}")
             else:
                 print(f"❌ Label '{label_name}' not found, skipping...")
         
@@ -374,7 +364,6 @@ class GmailAnalyzer:
                 return {'success': False, 'error': f'Label "{label_name}" not found'}
             
             label_id = label['id']
-            print(f"🏷️  Found label '{label_name}' with ID: {label_id}")
             
             # Get all messages with this label
             print(f"📨 Searching for messages with label '{label_name}'...")
