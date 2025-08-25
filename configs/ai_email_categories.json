@@ -1,10 +1,14 @@
 {
   "categories": [
-    "payment",
+    "career",
+    "event_invitation",
+    "newsletter",
+    "order_and_shipping",
     "promotion",
     "security_alert",
-    "security_update",
-    "other"
+    "social_update",
+    "subscription_confirmation",
+    "transaction_feedback_request"
   ],
-  "last_updated": "2025-08-24T09:58:17.002545"
+  "last_updated": "2025-08-25T07:03:05.976361"
 }

@@ -182,6 +182,7 @@ cython_debug/
 .abstra/
 credentials.json
 .gmail_auth/
+gmail_auth/
 
 # Visual Studio Code
 #  Visual Studio Code specific template is maintained in a separate VisualStudioCode.gitignore 
@@ -208,3 +209,6 @@ temp_data/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+gmail_auth/encryption.key
+backup_credentials.json
+gmail_auth/encrypted_token.json

@@ -265,6 +265,12 @@ class GmailAnalyzer:
             return {}
         
         try:
+            # Check if label already exists first
+            existing_label = self.find_label_by_name(label_name)
+            if existing_label:
+                print(f"ℹ️  Label '{label_name}' already exists (ID: {existing_label['id']})")
+                return existing_label
+            
             print(f"🏷️  Creating new label: {label_name}")
             
             label_object = {

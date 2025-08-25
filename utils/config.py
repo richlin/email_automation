@@ -25,7 +25,7 @@ class Config:
     
     # Gmail Configuration
     GMAIL_AUTH_CONFIG_DIR: str = os.getenv('GMAIL_AUTH_CONFIG_DIR', './temp_data')
-    GMAIL_CREDENTIALS_FILE: str = os.getenv('GMAIL_CREDENTIALS_FILE', './credentials.json')
+    GMAIL_CREDENTIALS_FILE: str = os.getenv('GMAIL_CREDENTIALS_FILE')
     
     # Application Configuration
     MAX_EMAILS: int = int(os.getenv('MAX_EMAILS', '200'))

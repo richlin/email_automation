@@ -68,7 +68,7 @@ class GmailAuthenticator:
             config_dir: Directory to store configuration files. If not provided, uses GMAIL_AUTH_CONFIG_DIR from .env
         """
         # Use environment variables if not provided
-        self.credentials_file = credentials_file or config.GMAIL_CREDENTIALS_FILE
+        self.credentials_file = config.GMAIL_CREDENTIALS_FILE
         self.token_file = token_file
         self.encrypted_token_file = encrypted_token_file
         self.config_dir = Path(config_dir or config.GMAIL_AUTH_CONFIG_DIR)

@@ -14,6 +14,7 @@ import pandas as pd
 from datetime import datetime
 import os
 import json
+import asyncio
 
 # Import our utility modules
 from utils.gmail_analyzer import GmailAnalyzer
@@ -185,6 +186,25 @@ with tab1:
                             # Step 4: Analyze patterns (like test_fetch_email.py)
                             analysis = st.session_state.gmail_analyzer.analyze_message_patterns(emails)
                             st.session_state.analysis_data = analysis
+                            
+                            # Step 5: Also store emails in sample_emails for classification
+                            # Convert emails to the format expected by the classifier
+                            sample_emails = []
+                            for email in emails:
+                                sample_email = {
+                                    'subject': email.get('subject', ''),
+                                    'sender': email.get('from', ''),
+                                    'content': email.get('full_content', ''),
+                                    'full_content': email.get('full_content', ''),
+                                    'labels': email.get('labelIds', []),  # Convert labelIds to labels
+                                    'labelIds': email.get('labelIds', []),  # Keep original for compatibility
+                                    'date': email.get('date', ''),
+                                    'id': email.get('id', ''),
+                                    'thread_id': email.get('threadId', '')
+                                }
+                                sample_emails.append(sample_email)
+                            
+                            st.session_state.sample_emails = sample_emails
                             
                             st.success(f"✅ Successfully fetched {len(emails)} emails!")
                         else:
@@ -520,6 +540,16 @@ with tab3:
                 if hasattr(st.session_state, 'sample_emails') and st.session_state.sample_emails:
                     st.success(f"✅ {len(st.session_state.sample_emails)} emails available")
                     
+                    # Debug info (can be removed later)
+                    with st.expander("🔍 Debug Info"):
+                        st.write(f"**Session State Keys:** {list(st.session_state.keys())}")
+                        if hasattr(st.session_state, 'emails_data'):
+                            st.write(f"**emails_data:** {len(st.session_state.emails_data)} emails")
+                        if hasattr(st.session_state, 'sample_emails'):
+                            st.write(f"**sample_emails:** {len(st.session_state.sample_emails)} emails")
+                            if st.session_state.sample_emails:
+                                st.write(f"**First email keys:** {list(st.session_state.sample_emails[0].keys())}")
+                    
                     # Apply categories button
                     if st.button("🎯 Apply Categories to Emails", type="primary", key="apply_categories_button"):
                         with st.spinner("Applying categories to emails..."):
@@ -527,6 +557,10 @@ with tab3:
                                 # Initialize classifier if not already done
                                 if not hasattr(st.session_state, 'email_classifier') or st.session_state.email_classifier is None:
                                     st.session_state.email_classifier = create_email_classifier()
+                                else:
+                                    # Ensure the classifier has the async method (recreate if needed)
+                                    if not hasattr(st.session_state.email_classifier, 'classify_email_async'):
+                                        st.session_state.email_classifier = create_email_classifier()
                                 
                                 # Update the classifier with the current categories (including any edits)
                                 # Use edited categories if available, otherwise use loaded categories
@@ -534,45 +568,130 @@ with tab3:
                                 if current_categories:
                                     st.session_state.email_classifier.categories = current_categories
                                 
+                                # Async function for parallel email classification
+                                async def classify_emails_parallel(emails, progress_bar, progress_text):
+                                    """Classify emails in parallel using async/await."""
+                                    classifications = []
+                                    token_usages = []
+                                    errors = []
+                                    
+                                    # Use semaphore to limit concurrent requests (max 5 at a time)
+                                    semaphore = asyncio.Semaphore(5)
+                                    
+                                    async def classify_single_email(i, email):
+                                        async with semaphore:
+                                            return await st.session_state.email_classifier.classify_email_async(
+                                                subject=email.get('subject', ''),
+                                                sender=email.get('sender', ''),
+                                                content=email.get('full_content', ''),
+                                                labels=email.get('labelIds', [])
+                                            )
+                                    
+                                    # Create tasks for all emails
+                                    tasks = []
+                                    for i, email in enumerate(emails):
+                                        task = asyncio.create_task(classify_single_email(i, email))
+                                        tasks.append((i, email, task))
+                                    
+                                    # Process completed tasks as they finish
+                                    completed = 0
+                                    for i, email, task in tasks:
+                                        try:
+                                            classification, token_usage = await task
+                                            classifications.append(classification)
+                                            if token_usage:
+                                                token_usages.append(token_usage)
+                                            
+                                            # Update progress
+                                            completed += 1
+                                            progress_bar.progress(completed / len(emails))
+                                            progress_text.text(f"Classified {completed} of {len(emails)} emails: {email.get('subject', 'No Subject')}")
+                                            
+                                        except Exception as e:
+                                            errors.append((i, email, str(e)))
+                                            completed += 1
+                                            progress_bar.progress(completed / len(emails))
+                                            progress_text.text(f"Failed to classify email {i+1}: {email.get('subject', 'No Subject')}")
+                                    
+                                    return classifications, token_usages, errors
+                                
                                 # Classify emails using the current categories
                                 classifications = []
                                 token_usages = []
                                 progress_bar = st.progress(0)
                                 progress_text = st.empty()
                                 
-                                for i, email in enumerate(st.session_state.sample_emails):
-                                    # Update progress
-                                    progress_bar.progress(i / len(st.session_state.sample_emails))
-                                    progress_text.text(f"Classifying email {i+1} of {len(st.session_state.sample_emails)}: {email.get('subject', 'No Subject')}")
-                                    
+                                # Debug: Check if async method exists
+                                if not hasattr(st.session_state.email_classifier, 'classify_email_async'):
+                                    st.error("❌ Async method not found on classifier. Available methods:")
+                                    st.write([m for m in dir(st.session_state.email_classifier) if 'classify' in m])
+                                    st.stop()
+                                
+                                # Run async classification
+                                with st.spinner("Classifying emails in parallel..."):
                                     try:
-                                        # Use classification with the loaded categories
-                                        classification, token_usage = st.session_state.email_classifier.classify_email(
-                                            subject=email.get('subject', ''),
-                                            sender=email.get('sender', ''),
-                                            content=email.get('full_content', ''),
-                                            labels=email.get('labelIds', [])
+                                        classifications, token_usages, errors = asyncio.run(
+                                            classify_emails_parallel(st.session_state.sample_emails, progress_bar, progress_text)
                                         )
-                                        classifications.append(classification)
-                                        if token_usage:
-                                            token_usages.append(token_usage)
+                                    except RuntimeError as e:
+                                        if "asyncio.run() cannot be called from a running event loop" in str(e):
+                                            # If we're already in an event loop, use asyncio.create_task
+                                            loop = asyncio.get_event_loop()
+                                            task = loop.create_task(
+                                                classify_emails_parallel(st.session_state.sample_emails, progress_bar, progress_text)
+                                            )
+                                            classifications, token_usages, errors = loop.run_until_complete(task)
+                                        else:
+                                            raise
                                     except Exception as e:
-                                        st.error(f"❌ Classification failed for email {i+1}: {str(e)}")
+                                        st.warning(f"⚠️ Async classification failed, falling back to sequential: {str(e)}")
+                                        # Fallback to sequential classification
+                                        classifications = []
+                                        token_usages = []
+                                        errors = []
+                                        for i, email in enumerate(st.session_state.sample_emails):
+                                            progress_bar.progress(i / len(st.session_state.sample_emails))
+                                            progress_text.text(f"Classifying email {i+1} of {len(st.session_state.sample_emails)}: {email.get('subject', 'No Subject')}")
+                                            
+                                            try:
+                                                classification, token_usage = st.session_state.email_classifier.classify_email(
+                                                    subject=email.get('subject', ''),
+                                                    sender=email.get('sender', ''),
+                                                    content=email.get('full_content', ''),
+                                                    labels=email.get('labelIds', [])
+                                                )
+                                                classifications.append(classification)
+                                                if token_usage:
+                                                    token_usages.append(token_usage)
+                                            except Exception as e:
+                                                errors.append((i, email, str(e)))
+                                                st.error(f"❌ Classification failed for email {i+1}: {str(e)}")
+                                
+                                # Show any errors that occurred
+                                for i, email, error in errors:
+                                    st.error(f"❌ Classification failed for email {i+1}: {error}")
                                 
                                 # Create labels and apply to Gmail
                                 if classifications:
                                     st.success(f"✅ Successfully classified {len(classifications)} emails")
                                     
-                                    # Create labels for each category
+                                    # Create labels for each category (only if they don't exist)
                                     created_labels = []
+                                    existing_labels = []
                                     for classification in classifications:
                                         category = classification.category
-                                        if category not in created_labels:
+                                        if category not in created_labels and category not in existing_labels:
                                             try:
-                                                # Create label in Gmail
-                                                label_id = st.session_state.gmail_analyzer.create_label(category)
-                                                if label_id:
-                                                    created_labels.append(category)
+                                                # Check if label already exists
+                                                existing_label = st.session_state.gmail_analyzer.find_label_by_name(category)
+                                                if existing_label:
+                                                    existing_labels.append(category)
+                                                    st.info(f"ℹ️ Label '{category}' already exists")
+                                                else:
+                                                    # Create label in Gmail only if it doesn't exist
+                                                    label_result = st.session_state.gmail_analyzer.create_label(category)
+                                                    if label_result:
+                                                        created_labels.append(category)
                                             except Exception as e:
                                                 st.warning(f"⚠️ Could not create label '{category}': {str(e)}")
                                     
@@ -596,6 +715,7 @@ with tab3:
                                     st.subheader("📊 Application Summary")
                                     st.metric("Emails Classified", len(classifications))
                                     st.metric("Labels Created", len(created_labels))
+                                    st.metric("Labels Already Existed", len(existing_labels))
                                     st.metric("Emails Labeled", labeled_count)
                                     
                                     # Show comprehensive token usage summary
@@ -644,6 +764,14 @@ with tab3:
                 else:
                     st.warning("⚠️ No email data available")
                     st.info("💡 Fetch emails first in the 'Fetch Emails' tab")
+                    
+                    # Show what's available in session state for debugging
+                    with st.expander("🔍 Session State Debug"):
+                        st.write(f"**Available session keys:** {list(st.session_state.keys())}")
+                        if hasattr(st.session_state, 'emails_data'):
+                            st.write(f"**emails_data:** {len(st.session_state.emails_data)} emails")
+                        if hasattr(st.session_state, 'sample_emails'):
+                            st.write(f"**sample_emails:** {len(st.session_state.sample_emails) if st.session_state.sample_emails else 0} emails")
             else:
                 st.warning("⚠️ No categories loaded")
                 st.info("💡 Load a category file in the left column first")

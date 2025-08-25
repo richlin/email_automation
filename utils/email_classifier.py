@@ -9,8 +9,9 @@ It can categorize emails into different types such as work, personal, spam, news
 import os
 import json
 import logging
+import asyncio
 from typing import Dict, List, Optional, Any
-from openai import OpenAI
+from openai import OpenAI, AsyncOpenAI
 from dataclasses import dataclass
 from .config import config
 
@@ -53,6 +54,7 @@ class EmailClassifier:
             raise ValueError("OpenAI API key is required. Set OPENAI_API_KEY in .env file or pass api_key parameter.")
         
         self.client = OpenAI(api_key=self.api_key)
+        self.async_client = AsyncOpenAI(api_key=self.api_key)
         self.logger = logging.getLogger(__name__)
         
         # Use provided config file or get from environment
@@ -139,6 +141,67 @@ class EmailClassifier:
             # Make API call using configuration from JSON file
             model_config = self.model_config
             response = self.client.chat.completions.create(
+                model=model_config.get('model', config.OPENAI_MODEL),
+                messages=[
+                    {
+                        "role": "system",
+                        "content": "You are an expert email classifier. Analyze emails and provide structured classification results."
+                    },
+                    {
+                        "role": "user",
+                        "content": prompt
+                    }
+                ],
+                temperature=model_config.get('temperature', 0.1),  # Low temperature for consistent classification
+                max_tokens=model_config.get('max_tokens', 3000)
+            )
+            
+            # Parse the response
+            result = self._parse_classification_response(response.choices[0].message.content)
+            
+            # Extract token usage
+            token_usage = {
+                'prompt_tokens': response.usage.prompt_tokens,
+                'completion_tokens': response.usage.completion_tokens,
+                'total_tokens': response.usage.total_tokens,
+                'model': response.model
+            }
+            
+            self.logger.info(f"Email classified as: {result.category} (confidence: {result.confidence})")
+            self.logger.info(f"Token usage: {token_usage['total_tokens']} total tokens")
+            return result, token_usage
+            
+        except Exception as e:
+            self.logger.error(f"Error classifying email: {str(e)}")
+            raise
+    
+    async def classify_email_async(self, 
+                      subject: str, 
+                      sender: str, 
+                      content: str, 
+                      labels: Optional[List[str]] = None) -> tuple[EmailClassification, Dict[str, Any]]:
+        """
+        Async version of classify_email method.
+        
+        Args:
+            subject: Email subject line
+            sender: Email sender address
+            content: Email body content
+            labels: Gmail labels (optional)
+            
+        Returns:
+            Tuple of (EmailClassification object, token usage dict)
+            
+        Raises:
+            Exception: If API call fails or response is invalid
+        """
+        try:
+            # Prepare the prompt for classification
+            prompt = self._create_classification_prompt(subject, sender, content, labels)
+            
+            # Make async API call using configuration from JSON file
+            model_config = self.model_config
+            response = await self.async_client.chat.completions.create(
                 model=model_config.get('model', config.OPENAI_MODEL),
                 messages=[
                     {
